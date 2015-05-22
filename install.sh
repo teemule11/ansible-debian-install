@@ -10,7 +10,7 @@ else
     echo "You can choose whether to use the STABLE or the DEVELOPMENT version of ansible:"
     echo
     # Unless you wish to install the latest devel version, choose to switch to the latest stable release:
-    # note: This won't work with all releases, testing in 1/2015 I was able just to make 1.9 and 1.8.1
+
     PS3='Please choose which version you want to install: '
 
     select option in "Current stable version" "Active development version"
@@ -27,6 +27,7 @@ fi
 
 apt-get update
 
+# Install dependencies
 # be aware: we install everything using --no-recommends. Asciidoc will take long to install otherwise, giving you 600MB of tex stuff
 apt-get --no-install-recommends install -y build-essential cdbs debhelper dpkg-dev git-core reprepro asciidoc devscripts sshpass fakeroot
 
